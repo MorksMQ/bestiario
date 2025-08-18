@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Bestiario</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>Bestiario</h1>
+
+<div class="bestiary">
+  <!-- Tarjeta 1 -->
+    <div class="card" onclick="openModal('modal-goblin')">
+        <img src="imgs/creaturas/Goblin.webp" alt="Goblin">
+        <h2>Goblin</h2>
+    </div>
+
+  <!-- Tarjeta 2 -->
+    <div class="card" onclick="openModal('modal-dragon')">
+        <img src="imgs/creaturas/dragonRojo.webp" alt="Dragón Rojo">
+        <h2>Dragón Rojo</h2>
+    </div>
+
+  <!-- Tarjeta Demonios Menores de Hielo -->
+    <div class="card" onclick="openModal('modal-demonios-hielo')">
+        <img src="imgs/creaturas/demoniosMenoresHielo.png" alt="Demonios Menores de Hielo">
+        <h2>Demonios Menores de Hielo (Trío)</h2>
+    </div>
+
+    <!-- Tarjeta slime -->
+    <div class="card" onclick="openModal('modal-slime')">
+        <img src="imgs/creaturas/slime.jpg" alt="Demonios Menores de Hielo">
+        <h2>Slime y variantes</h2>
+    </div>
+</div>
+
+<!-- Modal Goblin -->
+<div id="modal-goblin" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal-goblin')">X</button>
+    
+    <h2>Goblin</h2>
+    <p><em>Pequeño humanoide (goblinoide), neutral maligno</em></p>
+    <p><strong>Clase de Armadura:</strong> 15 (armadura de cuero, escudo)</p>
+    <p><strong>Puntos de Golpe:</strong> 7 (2d6)</p>
+    <p><strong>Velocidad:</strong> 30 pies</p>
+    
+    <span class="tag raridad-normal">Normal</span>
+    <span class="tag">Bestia / Humanoide</span>
+
+    <h3>Stats</h3>
+    <table>
+      <tr>
+        <th>FOR</th><th>DES</th><th>CON</th>
+        <th>INT</th><th>SAB</th><th>CAR</th>
+      </tr>
+      <tr>
+        <td>8 (-1)</td><td>14 (+2)</td><td>10 (+0)</td>
+        <td>10 (+0)</td><td>8 (-1)</td><td>8 (-1)</td>
+      </tr>
+    </table>
+
+    <h3>Detalles</h3>
+    <p><strong>Habilidades:</strong> Sigilo +6</p>
+    <p><strong>Sentidos:</strong> visión en la oscuridad 60 ft., Percepción pasiva 9</p>
+    <p><strong>Idiomas:</strong> Común, Goblin</p>
+    <p><strong>Desafío:</strong> 1/4 (50 PX)</p>
+
+    <h3>Rasgos</h3>
+    <ul>
+      <li><strong>Agilidad Nimble.</strong> El goblin puede retirarse o esconderse como acción adicional en cada uno de sus turnos.</li>
+      <li><strong>Combate en Grupo.</strong> Si al menos un aliado del goblin está a 5 pies del objetivo y no está incapacitado, el goblin tiene ventaja en la tirada de ataque contra esa criatura.</li>
+    </ul>
+
+    <h3>Acciones</h3>
+    <ul>
+      <li><strong>Espada Corta.</strong> Ataque de arma cuerpo a cuerpo: +4 al ataque, alcance 5 pies, un objetivo.  
+      Daño: 5 (1d6+2) perforante.</li>
+      <li><strong>Arco Corto.</strong> Ataque de arma a distancia: +4 al ataque, alcance 80/320 pies, un objetivo.  
+      Daño: 5 (1d6+2) perforante.</li>
+    </ul>
+
+    <h3>Tácticas</h3>
+    <ul>
+      <li>Emboscan desde la oscuridad o desde posiciones elevadas.</li>
+      <li>Atacan en grupos, hostigando con arcos antes de entrar al combate cuerpo a cuerpo.</li>
+      <li>Si la batalla se complica, se dispersan para reagruparse más tarde.</li>
+    </ul>
+
+    <h3>Debilidades</h3>
+    <p>Temen la luz brillante, la magia y a enemigos en gran número. Su moral es baja cuando combaten solos.</p>
+  </div>
+</div>
+
+<!-- Modal Dragón Rojo -->
+<div id="modal-dragon" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal-dragon')">X</button>
+    
+    <h2>Dragón Rojo</h2>
+    <p><em>Dragón grande, caótico maligno</em></p>
+    <p><strong>Clase de Armadura:</strong> 19 (armadura natural)</p>
+    <p><strong>Puntos de Golpe:</strong> 256 (19d12+133)</p>
+    <p><strong>Velocidad:</strong> 40 pies, volar 80 pies, trepar 40 pies</p>
+    
+    <span class="tag raridad-legendario">Legendario</span>
+    <span class="tag">Criatura Mágica</span>
+
+    <h3>Stats</h3>
+    <table>
+      <tr>
+        <th>FOR</th><th>DES</th><th>CON</th>
+        <th>INT</th><th>SAB</th><th>CAR</th>
+      </tr>
+      <tr>
+        <td>27 (+8)</td><td>10 (+0)</td><td>25 (+7)</td>
+        <td>16 (+3)</td><td>15 (+2)</td><td>21 (+5)</td>
+      </tr>
+    </table>
+
+    <h3>Detalles</h3>
+    <p><strong>Tiradas de Salvación:</strong> DEX +6, CON +13, WIS +8, CHA +11</p>
+    <p><strong>Resistencias a Daño:</strong> —</p>
+    <p><strong>Inmunidades a Daño:</strong> fuego</p>
+    <p><strong>Inmunidades a Condición:</strong> asustado</p>
+    <p><strong>Sentidos:</strong> visión verdadera 120 ft., percepción pasiva 21</p>
+    <p><strong>Idiomas:</strong> Común, Dracónico</p>
+    <p><strong>Desafío:</strong> 17 (18,000 PX)</p>
+
+    <h3>Rasgos</h3>
+    <ul>
+      <li><strong>Presencia Aterradora.</strong> Cada criatura a 120 pies del dragón que sea consciente de él debe superar una tirada de salvación de Sabiduría CD 19 o quedar asustada durante 1 minuto. Puede repetir la tirada al final de cada turno.</li>
+      <li><strong>Resistencia Legendaria (3/día).</strong> Si falla una tirada de salvación, puede decidir tener éxito en su lugar.</li>
+    </ul>
+
+    <h3>Acciones</h3>
+    <ul>
+      <li><strong>Ataque Múltiple.</strong> El dragón puede usar su Presencia Aterradora. Luego realiza tres ataques: uno con su mordisco y dos con sus garras.</li>
+      <li><strong>Mordisco.</strong> +14 al ataque, alcance 10 pies, un objetivo.  
+      Daño: 21 (2d10+8) perforante + 7 (2d6) fuego.</li>
+      <li><strong>Garra.</strong> +14 al ataque, alcance 5 pies, un objetivo.  
+      Daño: 17 (2d6+8) cortante.</li>
+      <li><strong>Coletazo.</strong> +14 al ataque, alcance 15 pies, un objetivo.  
+      Daño: 19 (2d8+8) contundente.</li>
+      <li><strong>Aliento de Fuego (Recarga 5–6).</strong> El dragón exhala fuego en un cono de 60 pies.  
+      Cada criatura en el área debe hacer una tirada de salvación de Destreza CD 21, recibiendo 63 (18d6) de daño de fuego con una tirada fallida, o la mitad en caso de éxito.</li>
+    </ul>
+
+    <h3>Acciones Legendarias</h3>
+    <p>El dragón puede realizar 3 acciones legendarias, eligiendo de entre las siguientes opciones. Solo puede usarse una acción a la vez y solo al final del turno de otra criatura:</p>
+    <ul>
+      <li><strong>Detectar.</strong> El dragón hace una prueba de Sabiduría (Percepción).</li>
+      <li><strong>Ataque con Cola.</strong> El dragón hace un ataque de coletazo.</li>
+      <li><strong>Ataque con Ala (2 acciones).</strong> El dragón bate sus alas. Cada criatura a 15 pies debe superar una tirada de salvación de Destreza CD 22 o recibir 13 (2d6+8) de daño contundente y quedar derribada. El dragón puede volar hasta la mitad de su velocidad de vuelo.</li>
+    </ul>
+
+    <h3>Tácticas</h3>
+    <ul>
+      <li>Siempre busca el terreno elevado, aprovechando su vuelo.</li>
+      <li>Ataca con su aliento de fuego al mayor número de enemigos posible.</li>
+      <li>Divide al grupo infundiendo miedo con su Presencia Aterradora.</li>
+      <li>Solo combate hasta la muerte si protege su guarida o su tesoro.</li>
+    </ul>
+
+    <h3>Debilidades</h3>
+    <p>Es vulnerable a enemigos resistentes al fuego, a la magia de hielo y a armas legendarias capaces de atravesar sus defensas.</p>
+  </div>
+</div>
+
+  <!-- Modal Demonios Menores de Hielo -->
+<div id="modal-demonios-hielo" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal-demonios-hielo')">X</button>
+    
+    <h2>Demonios Menores de Hielo (Trío)</h2>
+    <p><em>Pequeño demonio, caótico maligno</em></p>
+    <p><strong>Clase de Armadura:</strong> 13 (piel helada)</p>
+    <p><strong>Puntos de Golpe:</strong> 22 (5d6+5) cada uno</p>
+    <p><strong>Velocidad:</strong> 30 pies</p>
+    
+    <span class="tag raridad-raro">Raro</span>
+    <span class="tag">Demonio / Invocación</span>
+
+    <h3>Stats</h3>
+    <table>
+      <tr>
+        <th>FUE</th><th>DES</th><th>CON</th>
+        <th>INT</th><th>SAB</th><th>CAR</th>
+      </tr>
+      <tr>
+        <td>8 (-1)</td><td>14 (+2)</td><td>12 (+1)</td>
+        <td>6 (-2)</td><td>10 (+0)</td><td>8 (-1)</td>
+      </tr>
+    </table>
+
+    <h3>Detalles</h3>
+    <p><strong>Tiradas de Salvación:</strong> DES +4, CON +3</p>
+    <p><strong>Resistencias a Daño:</strong> frío, cortante no mágico</p>
+    <p><strong>Inmunidades a Condición:</strong> encantado, asustado</p>
+    <p><strong>Sentidos:</strong> visión en la oscuridad 60 ft., Percepción pasiva 10</p>
+    <p><strong>Idiomas:</strong> entienden infernal y abisal, no hablan</p>
+    <p><strong>Desafío:</strong> 1/2 (100 PX cada uno, ver <em>Destino Compartido</em>)</p>
+
+    <h3>Rasgos</h3>
+    <ul>
+      <li><strong>Destino Compartido.</strong> Estos demonios solo mueren si los tres son destruidos en un lapso de 1 minuto. De lo contrario, los caídos se regeneran al inicio de su siguiente turno con todos sus puntos de golpe.</li>
+      <li><strong>Siempre en Trío.</strong> Siempre aparecen y combaten juntos.</li>
+      <li><strong>Aura Helada.</strong> Criaturas a 5 pies deben superar CON CD 11 o reciben 3 (1d6) de daño por frío al inicio de su turno.</li>
+    </ul>
+
+    <h3>Acciones</h3>
+    <ul>
+      <li><strong>Garras Heladas.</strong> Ataque de arma cuerpo a cuerpo: +4 al ataque, alcance 5 pies, un objetivo.  
+      Daño: 6 (1d8+2) cortante + 2 (1d4) frío.</li>
+      <li><strong>Carcajada Invernal (Recarga 5–6).</strong> Los tres ríen al unísono como acción conjunta. Cada criatura a 20 pies que pueda oírlos debe superar una tirada de Sabiduría CD 12 o quedar <em>aturdida</em> hasta el final de su siguiente turno.</li>
+    </ul>
+
+    <h3>Tácticas</h3>
+    <ul>
+      <li>Se lanzan siempre en conjunto contra el enemigo más débil.</li>
+      <li>Fingen morir varias veces para agotar a los aventureros.</li>
+      <li>Si notan que los tres están en riesgo al mismo tiempo, intentan separarse.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Modal Slime -->
+<div id="modal-slime" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal-slime')">X</button>
+    <h2>Slime</h2>
+    <p><em>Pequeña criatura mágica, sin alineamiento</em></p>
+
+    <ul>
+      <li><strong>Clase de Armadura:</strong> 8 (cuerpo amorfo)</li>
+      <li><strong>Puntos de Golpe:</strong> 10 (3d6)</li>
+      <li><strong>Velocidad:</strong> 20 pies</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>FUE</th><th>DES</th><th>CON</th><th>INT</th><th>SAB</th><th>CAR</th>
+      </tr>
+      <tr>
+        <td>6 (-2)</td><td>8 (-1)</td><td>12 (+1)</td>
+        <td>1 (-5)</td><td>6 (-2)</td><td>2 (-4)</td>
+      </tr>
+    </table>
+
+    <p><strong>Idiomas:</strong> —<br>
+    <strong>Desafío:</strong> 1/4 (50 PX)</p>
+
+    <h3>Rasgos Comunes</h3>
+    <ul>
+      <li><strong>Cuerpo Amorfo:</strong> Puede moverse a través de espacios de hasta 1 pulgada sin dificultad.</li>
+      <li><strong>Inmunidad a Daño:</strong> contundente, cortante y perforante de armas no mágicas.</li>
+      <li><strong>Inmunidad a Condiciones:</strong> cegado, encantado, asustado, inconsciente.</li>
+    </ul>
+
+    <h3>Acciones</h3>
+    <ul>
+      <li><strong>Toque de Baba:</strong> +3 al ataque, alcance 5 pies, un objetivo. Daño y efectos dependen de la variante.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Variantes de Slime</h2>
+
+    <h3>Slime de Agua <span class="tag raridad-normal">Normal</span></h3>
+    <ul>
+      <li><strong>CA:</strong> 8</li>
+      <li><strong>PG:</strong> 10 (3d6)</li>
+      <li><strong>Velocidad:</strong> 20 pies, nado 20 pies</li>
+    </ul>
+    <p><strong>Ataque:</strong> Toque acuoso (1d6 de daño por frío).<br>
+    <strong>Efecto:</strong> Si el objetivo falla CON CD 11, queda <em>ralentizado</em> hasta su siguiente turno.</p>
+
+    <h3>Slime de Magma <span class="tag raridad-raro">Raro</span></h3>
+    <ul>
+      <li><strong>CA:</strong> 9</li>
+      <li><strong>PG:</strong> 14 (4d6)</li>
+      <li><strong>Velocidad:</strong> 20 pies</li>
+    </ul>
+    <p><strong>Ataque:</strong> Toque ígneo (1d8 de daño de fuego).<br>
+    <strong>Efecto:</strong> Objetivo debe superar DEX CD 12 o prenderse fuego (1d4 daño extra al inicio de su turno).</p>
+
+    <h3>Slime de Aire (Globo de Aire) <span class="tag raridad-normal">Normal</span></h3>
+    <ul>
+      <li><strong>CA:</strong> 10</li>
+      <li><strong>PG:</strong> 8 (2d6+2)</li>
+      <li><strong>Velocidad:</strong> 20 pies, vuelo 30 pies</li>
+    </ul>
+    <p><strong>Ataque:</strong> Explosión de aire (empuja 10 pies).<br>
+    <strong>Efecto:</strong> Puede inflarse y flotar a voluntad.</p>
+
+    <h3>Slime de Lodo <span class="tag raridad-normal">Normal</span></h3>
+    <ul>
+      <li><strong>CA:</strong> 7</li>
+      <li><strong>PG:</strong> 12 (3d6+3)</li>
+      <li><strong>Velocidad:</strong> 20 pies</li>
+    </ul>
+    <p><strong>Ataque:</strong> Salpicadura lodosa (1d6 daño contundente).<br>
+    <strong>Efecto:</strong> Reduce la velocidad del objetivo en 10 pies (1 turno).</p>
+
+    <h3>Slime de Baba Tóxica <span class="tag raridad-epico">Epico</span></h3>
+    <ul>
+      <li><strong>CA:</strong> 9</li>
+      <li><strong>PG:</strong> 16 (5d6)</li>
+      <li><strong>Velocidad:</strong> 20 pies</li>
+    </ul>
+    <p><strong>Ataque:</strong> Toque venenoso (1d6 veneno + 1d4 ácido).<br>
+    <strong>Efecto:</strong> Objetivo debe superar CON CD 13 o quedar <em>envenenado</em> 1 minuto.</p>
+
+    <h3>Slime Etéreo <span class="tag raridad-legendario">Legendario</span></h3>
+    <ul>
+      <li><strong>CA:</strong> 12</li>
+      <li><strong>PG:</strong> 18 (5d6+5)</li>
+      <li><strong>Velocidad:</strong> 20 pies, vuela 20 pies (etéreo)</li>
+    </ul>
+    <p><strong>Ataque:</strong> Toque espectral (1d8 de daño necrótico).<br>
+    <strong>Efecto:</strong> Puede atravesar objetos y paredes.</p>
+
+    <h3>Slime Plasmático <span class="tag raridad-mitico">Mitico</span></h3>
+    <ul>
+      <li><strong>CA:</strong> 13</li>
+      <li><strong>PG:</strong> 25 (7d6+7)</li>
+      <li><strong>Velocidad:</strong> 25 pies</li>
+    </ul>
+    <p><strong>Ataque:</strong> Descarga de plasma (2d6 relámpago).<br>
+    <strong>Efecto:</strong> Cada criatura a 5 pies recibe 1d4 daño eléctrico adicional. Inmune a la magia menor.</p>
+
+    <hr>
+
+    <h3>Tácticas</h3>
+    <p>Los Slimes suelen moverse en grupos, explorando cavernas, ruinas y zonas mágicamente alteradas.  
+    Aunque débiles en apariencia, su resistencia a ataques físicos y sus efectos únicos los hacen peligrosos.  
+    Muchos magos los utilizan como experimentos fallidos o guardianes improvisados.</p>
+  </div>
+</div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
