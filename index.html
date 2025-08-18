@@ -33,6 +33,12 @@
         <img src="imgs/creaturas/slime.jpg" alt="Demonios Menores de Hielo">
         <h2>Slime y variantes</h2>
     </div>
+
+    <!-- Tarjeta del centaleon -->
+    <div class="card" onclick="openModal('centaleonModal')">
+      <img src="imgs/creaturas/centaleon.jpg" alt="Centaleón">
+      <h2>Centaleón</h2>
+    </div>
 </div>
 
 <!-- Modal Goblin -->
@@ -339,14 +345,107 @@
   </div>
 </div>
 
+<!-- Modal Centaleón -->
+<div id="centaleonModal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('centaleonModal')">X</button>
+    <h2>Centaleón</h2>
+    <p><strong>Rareza:</strong> <span class="tag raridad-epico">Epico</span> Bestia magica</p>
+    <p><strong>Actitud:</strong> Territorial, fija a un solo objetivo</p>
+    <p><strong>Tipo:</strong> Bestia mágica grande, caótica neutral</p>
+
+    <h3>Apariencia</h3>
+    <p>
+      El Centaleón es una fusión extraña entre un león majestuoso y un guerrero centauro.
+      Su torso es humanoide y musculoso, con melena leonina, mientras que su cuerpo inferior
+      es el de un león dorado con garras afiladas. Sus ojos ámbar brillan con ferocidad, y su rugido
+      resuena como un trueno en las llanuras.
+    </p>
+
+    <h3>Estadísticas</h3>
+    <ul>
+      <li><strong>Clase de Armadura:</strong> 16 (piel endurecida y reflejos felinos)</li>
+      <li><strong>Puntos de Golpe:</strong> 120 (16d10 + 32)</li>
+      <li><strong>Velocidad:</strong> 40 pies, salto largo hasta 20 pies</li>
+    </ul>
+
+    <table>
+      <tr><th>FOR</th><th>DES</th><th>CON</th><th>INT</th><th>SAB</th><th>CAR</th></tr>
+      <tr><td>18 (+4)</td><td>14 (+2)</td><td>15 (+2)</td><td>10 (+0)</td><td>12 (+1)</td><td>13 (+1)</td></tr>
+    </table>
+
+    <p><strong>Tiradas de Salvación:</strong> FOR +6, DES +4, CON +4</p>
+    <p><strong>Resistencias:</strong> contundente, cortante y perforante no mágicos</p>
+    <p><strong>Sentidos:</strong> visión en la oscuridad 60 pies, Percepción pasiva 13</p>
+    <p><strong>Idiomas:</strong> entiende Común y Silvano, rara vez habla</p>
+    <p><strong>Desafío:</strong> 6 (2,300 PX)</p>
+
+    <h3>Rasgos</h3>
+    <ul>
+      <li><strong>Agresividad Territorial:</strong> fija a un único enemigo como presa prioritaria.</li>
+      <li><strong>Carga Felina:</strong> si se mueve 20 pies y golpea, puede derribar al objetivo (CD 14).</li>
+      <li><strong>Orgullo de Alfa:</strong> en su territorio obtiene ventaja contra su objetivo marcado.</li>
+    </ul>
+
+    <h3>Acciones</h3>
+    <ul>
+      <li><strong>Ataques Múltiples:</strong> realiza dos garras y una mordida.</li>
+      <li><strong>Garras:</strong> +6 al ataque, 5 pies, 12 (2d6+4) daño cortante.</li>
+      <li><strong>Mordida:</strong> +6 al ataque, 5 pies, 14 (2d8+4) daño perforante.</li>
+      <li><strong>Rugido Ensordecedor (Recarga 5–6):</strong> criaturas en 30 pies CD 14 Sabiduría o asustadas.</li>
+      <li><strong>Salto de Depredador:</strong> salta 20 pies, golpe 10 (2d6+4) y derribo (CD 13 DES).</li>
+    </ul>
+
+    <h3>Tácticas</h3>
+    <p>
+      Marca a la criatura más fuerte o líder del grupo y se centra en ella.  
+      Su obsesión lo hace vulnerable a ataques coordinados.  
+      Si está en desventaja numérica, usa el Rugido Ensordecedor para dispersar a los aventureros.  
+      Nunca huye de su territorio.
+    </p>
+  </div>
+</div>
+
 <script>
-  function openModal(id) {
-    document.getElementById(id).style.display = 'flex';
+// Función para abrir el modal
+function openModal(id) {
+  let modal = document.getElementById(id);
+  modal.style.display = "block";
+
+  // Agregamos un estado al historial para que "Atrás" cierre el modal
+  history.pushState({ modalId: id }, "", "#"+id);
+}
+
+// Función para cerrar el modal
+function closeModal(id) {
+  let modal = document.getElementById(id);
+  if (modal) {
+    modal.style.display = "none";
   }
 
-  function closeModal(id) {
-    document.getElementById(id).style.display = 'none';
+  // Volvemos el historial al estado anterior sin salir de la página
+  if (window.location.hash === "#" + id) {
+    history.back();
   }
+}
+
+// Detectar ESC
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    let modals = document.querySelectorAll(".modal");
+    modals.forEach(modal => {
+      if (modal.style.display === "block") {
+        closeModal(modal.id);
+      }
+    });
+  }
+});
+
+// Detectar botón atrás en móvil / navegador
+window.addEventListener("popstate", function(event) {
+  let modals = document.querySelectorAll(".modal");
+  modals.forEach(modal => modal.style.display = "none");
+});
 </script>
 
 </body>
