@@ -1,0 +1,4 @@
+<div class="card" onclick="openModal('_modal-mounstruo_')">
+    <img src="_ruta-img_" alt="_mounstruo_">
+    <h2>_nombre-mounstruo_</h2>
+</div>

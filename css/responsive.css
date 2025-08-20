@@ -1,0 +1,232 @@
+/* =============================
+   RESPONSIVE.CSS
+   Mejoras para móviles, tablets y laptops
+   ============================= */
+
+/* Ajustes generales */
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- Tarjetas del bestiario --- */
+.card {
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.card img {
+  height: 200px; /* un poco más grande para pantallas táctiles */
+  object-fit: contain;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin: 12px;
+}
+
+/* --- Modal --- */
+.modal-content {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* =============================
+   📱 Celulares (pantallas pequeñas)
+   ============================= */
+@media (max-width: 480px) {
+  body {
+    font-size: 1.05rem;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .bestiary {
+    grid-template-columns: 1fr; /* 1 tarjeta por fila */
+    gap: 16px;
+  }
+
+  .card {
+    border-radius: 16px;
+  }
+
+  .card img {
+    height: 220px; /* más grandes para legibilidad */
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-height: 85vh;
+    font-size: 1.1rem;
+    padding: 18px;
+  }
+
+  table th, table td {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+}
+
+/* =============================
+   📲 Tablets (pantallas medianas)
+   ============================= */
+@media (min-width: 481px) and (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .bestiary {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+
+  .card img {
+    height: 220px;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-content {
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+}
+
+/* =============================
+   💻 Laptops (pantallas grandes)
+   ============================= */
+@media (min-width: 769px) and (max-width: 1200px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .bestiary {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+
+  .card img {
+    height: 240px;
+  }
+
+  .card h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal-content {
+    font-size: 1.15rem;
+    padding: 24px;
+  }
+}
+
+/* =============================
+   🖥️ Escritorios grandes
+   ============================= */
+@media (min-width: 1201px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .bestiary {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .card img {
+    height: 260px;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-content {
+    font-size: 1.2rem;
+    padding: 28px;
+  }
+}
+
+/* ========== ESTILOS RESPONSIVE ========== */
+
+/* Dispositivos pequeños (celulares en vertical) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    .bestiary {
+        grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
+        gap: 12px;
+    }
+
+    .card {
+        border-radius: 8px;
+    }
+
+    .card h2 {
+        font-size: 0.95em;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 16px;
+        font-size: 1em; /* descripción legible */
+        line-height: 1.5;
+    }
+}
+
+/* Dispositivos medianos (celulares grandes o tablets en vertical) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .bestiary {
+        grid-template-columns: repeat(2, 1fr); /* 2 por fila también */
+        gap: 16px;
+    }
+
+    .card h2 {
+        font-size: 1.1em;
+    }
+
+    .modal-content {
+        width: 90%;
+        font-size: 1.05em;
+    }
+}
+
+/* Tablets en horizontal y laptops pequeñas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bestiary {
+        grid-template-columns: repeat(3, 1fr); /* 3 por fila */
+    }
+
+    .modal-content {
+        width: 80%;
+        font-size: 1.05em;
+    }
+}
+
+/* Laptops grandes y desktop */
+@media (min-width: 1025px) {
+    .bestiary {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .modal-content {
+        width: 70%;
+        font-size: 1.1em;
+    }
+}

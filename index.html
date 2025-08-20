@@ -4,19 +4,20 @@
   <meta charset="UTF-8">
   <title>Bestiario</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
 <h1>Bestiario</h1>
 
 <div class="bestiary">
-  <!-- Tarjeta 1 -->
+  <!-- Tarjeta goblin -->
     <div class="card" onclick="openModal('modal-goblin')">
         <img src="imgs/creaturas/Goblin.webp" alt="Goblin">
         <h2>Goblin</h2>
     </div>
 
-  <!-- Tarjeta 2 -->
+  <!-- Tarjeta dragon rojo -->
     <div class="card" onclick="openModal('modal-dragon')">
         <img src="imgs/creaturas/dragonRojo.webp" alt="Dragón Rojo">
         <h2>Dragón Rojo</h2>
@@ -38,6 +39,12 @@
     <div class="card" onclick="openModal('centaleonModal')">
       <img src="imgs/creaturas/centaleon.jpg" alt="Centaleón">
       <h2>Centaleón</h2>
+    </div>
+
+    <!-- tarjeta de mimic -->
+    <div class="card" onclick="openModal('modalMimic')">
+      <img src="imgs/creaturas/mimic.png" alt="mimic">
+      <h2>Mimic</h2>
     </div>
 </div>
 
@@ -406,6 +413,71 @@
   </div>
 </div>
 
+<div id="modalMimic" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modalMimic')">X</button>
+    
+    <h2>Mimic</h2>
+    <p><em> Monstruosidad mediana (cambiaformas), neutral</em></p>
+    <p><strong>Clase de Armadura:</strong> __CA__</p>
+    <p><strong>Puntos de Golpe:</strong> __PG__</p>
+    <p><strong>Velocidad:</strong> __VELOCIDAD__</p>
+    
+    <span class="tag raridad-__RAREZA__">__RAREZA__</span>
+    <span class="tag">__CATEGORIA__</span>
+
+    <h3>Stats</h3>
+    <table>
+      <tr>
+        <th>FOR</th><th>DES</th><th>CON</th>
+        <th>INT</th><th>SAB</th><th>CAR</th>
+      </tr>
+      <tr>
+        <td>__FOR__</td><td>__DES__</td><td>__CON__</td>
+        <td>__INT__</td><td>__SAB__</td><td>__CAR__</td>
+      </tr>
+    </table>
+
+    <h3>Detalles</h3>
+    <p><strong>Tiradas de Salvación:</strong> __SALVACIONES__</p>
+    <p><strong>Resistencias a Daño:</strong> __RESISTENCIAS__</p>
+    <p><strong>Inmunidades a Daño:</strong> __INMUNIDADES_DAÑO__</p>
+    <p><strong>Inmunidades a Condición:</strong> __INMUNIDADES_CONDICION__</p>
+    <p><strong>Sentidos:</strong> __SENTIDOS__</p>
+    <p><strong>Idiomas:</strong> __IDIOMAS__</p>
+    <p><strong>Desafío:</strong> __DESAFIO__</p>
+
+    <h3>Rasgos</h3>
+    <ul>
+      <li><strong>__RASGO_1__.</strong> __DESCRIPCION_RASGO_1__</li>
+      <li><strong>__RASGO_2__.</strong> __DESCRIPCION_RASGO_2__</li>
+    </ul>
+
+    <h3>Acciones</h3>
+    <ul>
+      <li><strong>__ACCION_1__.</strong> __DESCRIPCION_ACCION_1__</li>
+      <li><strong>__ACCION_2__.</strong> __DESCRIPCION_ACCION_2__</li>
+    </ul>
+
+    <h3>Acciones Legendarias</h3>
+    <p>__DESCRIPCION_ACCIONES_LEGENDARIAS__</p>
+    <ul>
+      <li><strong>__ACCION_LEGENDARIA_1__.</strong> __DESCRIPCION__</li>
+      <li><strong>__ACCION_LEGENDARIA_2__.</strong> __DESCRIPCION__</li>
+    </ul>
+
+    <h3>Tácticas</h3>
+    <ul>
+      <li>__TACTICA_1__</li>
+      <li>__TACTICA_2__</li>
+    </ul>
+
+    <h3>Debilidades</h3>
+    <p>__DEBILIDADES__</p>
+  </div>
+</div>
+
+
 <script>
 // Función para abrir el modal
 function openModal(id) {
@@ -445,6 +517,22 @@ document.addEventListener("keydown", function(event) {
 window.addEventListener("popstate", function(event) {
   let modals = document.querySelectorAll(".modal");
   modals.forEach(modal => modal.style.display = "none");
+});
+
+// Evitar que los clics dentro del modal cierren accidentalmente
+document.querySelectorAll(".modal-content").forEach(content => {
+  content.addEventListener("click", function(event) {
+    event.stopPropagation();
+  });
+});
+
+// Cerrar modal al hacer clic en el fondo
+document.querySelectorAll(".modal").forEach(modal => {
+  modal.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      closeModal(modal.id);
+    }
+  });
 });
 </script>
 

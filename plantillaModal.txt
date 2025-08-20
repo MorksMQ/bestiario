@@ -1,0 +1,63 @@
+<div id="modal-__ID__" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal-__ID__')">X</button>
+    
+    <h2>__NOMBRE__</h2>
+    <p><em>__TIPO_Y_ALINEAMIENTO__</em></p>
+    <p><strong>Clase de Armadura:</strong> __CA__</p>
+    <p><strong>Puntos de Golpe:</strong> __PG__</p>
+    <p><strong>Velocidad:</strong> __VELOCIDAD__</p>
+    
+    <span class="tag raridad-__RAREZA__">__RAREZA__</span>
+    <span class="tag">__CATEGORIA__</span>
+
+    <h3>Stats</h3>
+    <table>
+      <tr>
+        <th>FOR</th><th>DES</th><th>CON</th>
+        <th>INT</th><th>SAB</th><th>CAR</th>
+      </tr>
+      <tr>
+        <td>__FOR__</td><td>__DES__</td><td>__CON__</td>
+        <td>__INT__</td><td>__SAB__</td><td>__CAR__</td>
+      </tr>
+    </table>
+
+    <h3>Detalles</h3>
+    <p><strong>Tiradas de Salvación:</strong> __SALVACIONES__</p>
+    <p><strong>Resistencias a Daño:</strong> __RESISTENCIAS__</p>
+    <p><strong>Inmunidades a Daño:</strong> __INMUNIDADES_DAÑO__</p>
+    <p><strong>Inmunidades a Condición:</strong> __INMUNIDADES_CONDICION__</p>
+    <p><strong>Sentidos:</strong> __SENTIDOS__</p>
+    <p><strong>Idiomas:</strong> __IDIOMAS__</p>
+    <p><strong>Desafío:</strong> __DESAFIO__</p>
+
+    <h3>Rasgos</h3>
+    <ul>
+      <li><strong>__RASGO_1__.</strong> __DESCRIPCION_RASGO_1__</li>
+      <li><strong>__RASGO_2__.</strong> __DESCRIPCION_RASGO_2__</li>
+    </ul>
+
+    <h3>Acciones</h3>
+    <ul>
+      <li><strong>__ACCION_1__.</strong> __DESCRIPCION_ACCION_1__</li>
+      <li><strong>__ACCION_2__.</strong> __DESCRIPCION_ACCION_2__</li>
+    </ul>
+
+    <h3>Acciones Legendarias</h3>
+    <p>__DESCRIPCION_ACCIONES_LEGENDARIAS__</p>
+    <ul>
+      <li><strong>__ACCION_LEGENDARIA_1__.</strong> __DESCRIPCION__</li>
+      <li><strong>__ACCION_LEGENDARIA_2__.</strong> __DESCRIPCION__</li>
+    </ul>
+
+    <h3>Tácticas</h3>
+    <ul>
+      <li>__TACTICA_1__</li>
+      <li>__TACTICA_2__</li>
+    </ul>
+
+    <h3>Debilidades</h3>
+    <p>__DEBILIDADES__</p>
+  </div>
+</div>
